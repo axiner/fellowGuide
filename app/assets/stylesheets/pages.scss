@@ -18,7 +18,9 @@ $pink: #ff2e63;
 $purple: #521262;
 $yellow: #f6c90e;
 $green: #07c1bf;
-$black: #282828;
+$dark_grey: #55595B;
+$black:#282828;
+$lake_blue:#08D9D6;
 $black_trans: rgba(0, 0, 0, 0.5);
 
 html, body {
@@ -42,9 +44,8 @@ body {
 }
 
 nav {
-  background-color: $grey;
-  margin: 5px;
   overflow: hidden;
+
 
 
   ul {
@@ -53,7 +54,7 @@ nav {
     justify-content: flex-end;
     // width: 100%;
     float: right;
-    font-size: 0.8rem;
+    font-size: 1rem;
     overflow: hidden;
     margin:0;
   }
@@ -66,11 +67,12 @@ nav {
 
   a {
     display: block;
-    // padding: 6px 12px;
+    //padding: 6px 12px;
+    font-size: 1rem;
     text-decoration: none;
-    color: $black;
-    padding-right: 20px;
-    padding: 5px 5px;
+    color: white;
+    padding-right: 30px;
+    padding: 17px 10px;
   }
 }
 
@@ -78,21 +80,28 @@ nav {
   border: 2px solid $pink;
   color: $pink;
   padding: 5px 5px;
-  margin-right: 10px;
-  background-color: $grey;
+  margin:10px 10px 20px 20px;
+  background-color: transparent;
+  font-size:1rem;
 }
 
 
-  .video_pane {
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      background-size: cover;
+.video_pane {
+    position:absolute;
+    z-index: -1000;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top:0;
+    left:0;
 
-      video {
-        width: 100%;
-      }
+    video {
+      position:absolute;
+      top:0;
+      left:0;
+      min-height: 100%;
+      min-width: 100%;
+    }
 }
 
   .tag_line{
@@ -126,7 +135,7 @@ nav {
     width: 100%;
     position: absolute;
     // top: 70%;
-    bottom: 5px;
+    bottom: 0;
     text-align: center;
     background-color: $black_trans;
 
@@ -223,6 +232,7 @@ nav {
 
 }
 
+
 .search_button {
   border: 1px solid $pink;
   border-radius: 5%;
@@ -231,5 +241,124 @@ nav {
   color: white;
   padding: 2.5px 30px;
   margin-left: 20px;
+}
+
+.search_button:hover,
+.search_button:active{
+  border: 1px solid white;
+  background-color: $black_trans;
+}
+
+.category_headline {
+  position:absolute;
+  margin-left:350px;
+  margin-top:40px;
+  color: $dark_grey;
+  h3{
+    font-size:1.5rem;
+  }
+
+  p{
+    font-size:1rem;
+  }
+
+}
+
+.tour_category {
+  position:absolute;
+  margin-top: 150px;
+  a {
+    display:inline;
+    text-decoration: none;
+  }
+
+  #categ1:link,
+  #categ1:visited{
+    float:left;
+    padding:20px 130px 20px 130px;
+    color:white;
+    background-color: $pink;
+  }
+
+  #categ1:hover,
+  #categ1:active{
+    background-color: #ff83a2;
+  }
+
+  #categ2:link,
+  #categ2:visited{
+    float:left;
+    margin:auto;
+    color:$dark_grey;
+    padding:20px 142.5px 20px 142.5px;
+    background-color: white;
+  }
+
+  #categ2:hover,
+  #categ2:active{
+    background-color: $black_trans;
+  }
+
+  #categ3:link,
+  #categ3:visited{
+    float:right;
+    padding:20px 145px 20px 145px;
+    color:white;
+    background-color: $lake_blue;
+  }
+
+  #categ3:hover,
+  #categ3:active{
+    background-color: #b1fcfb;
+  }
+}
+
+.guide_designed_tour {
+    position:absolute;
+    margin-top:210px;
+
+    #1_left{
+      float:left;
+    }
+
+    #1_right{
+        float:right;
+    }
+
+//    p{
+//      float:right;
+//      margin:150px;
+//      padding:150px;
+//    }
+//
+//    p1{
+//      font-size: 4rem;
+//      margin:100px;
+//    }
+//
+//    p2{
+//      font-size: 2rem;
+//    }
+
+
+}
+
+.customized_tour {
+    position:absolute;
+    margin-top: 700px;
+}
+
+
+.newcomer_support {
+    position:absolute;
+    margin-top: 1190px;
+
+    #3_left{
+      float:left;
+    }
+
+    #3_right{
+      float:right;
+    }
 
 }

@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160519212542) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bookings", force: :cascade do |t|
     t.integer  "duration"
     t.boolean  "accepted"
@@ -67,7 +70,7 @@ ActiveRecord::Schema.define(version: 20160519212542) do
     t.string   "transportation"
   end
 
-  add_index "guides", ["reset_password_token"], name: "index_guides_on_reset_password_token", unique: true
+  add_index "guides", ["reset_password_token"], name: "index_guides_on_reset_password_token", unique: true, using: :btree
 
   create_table "guides_languages", id: false, force: :cascade do |t|
     t.integer "guide_id",    null: false
@@ -99,6 +102,6 @@ ActiveRecord::Schema.define(version: 20160519212542) do
     t.boolean  "paid"
   end
 
-  add_index "visitors", ["reset_password_token"], name: "index_visitors_on_reset_password_token", unique: true
+  add_index "visitors", ["reset_password_token"], name: "index_visitors_on_reset_password_token", unique: true, using: :btree
 
 end
